@@ -1,0 +1,23 @@
+{
+  "name": "myfuel",
+  "version": "1.0.0",
+  "description": "Car fuel tracking",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/agustinf88/MyFuel.git"
+  },
+  "keywords": [
+    "node",
+    "react"
+  ],
+  "author": "Agustin Fiorenza",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/agustinf88/MyFuel/issues"
+  },
+  "homepage": "https://github.com/agustinf88/MyFuel#readme"
+}

@@ -11,7 +11,7 @@ const getById = database => (req, res) => {
     .toArray((err, r) => {
       if (err) {
         res.status(500).send(err);
-        return
+        return;
       }
       res.status(200).send(r[0]);
     });
@@ -30,19 +30,7 @@ const getAll = database => (req, res) => {
     });
 };
 
-// const writeLoad = database => (req, res) => {
-//   const load = new Load(req.body);
-//   database
-//     .collection('loads')
-//     .insert(load)
-//     .then(r => res.status(200).send(r))
-//     .catch(err => res.status(500).then(err));
-// };
-
-// Implementacion de Async/Await
-const writeLoad = database => (req, res) => handleReq(req, res, database);
-
-async function handleReq(req, res, database) {
+const writeLoad = database => async (req, res) => {
   const load = new Load(req.body);
   try {
     let r = await database.collection('loads').insert(load);
@@ -50,7 +38,8 @@ async function handleReq(req, res, database) {
   } catch (error) {
     res.status(500).send(error);
   }
-}
+  return;
+};
 
 const deleteAll = database => (req, res) => {
   database
@@ -68,6 +57,7 @@ const deleteById = database => (req, res) => {
     .then(r => res.status(200).send(r))
     .catch(err => res.status(500).send(err));
 };
+
 module.exports = {
   getById,
   getAll,

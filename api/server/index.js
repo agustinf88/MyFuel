@@ -3,6 +3,9 @@ const app = express();
 const bodyParser = require('body-parser');
 const compression = require('compression');
 const router = new express.Router();
+const logger = require('winston').loggers.get('development');
+
+logger.info('info');
 
 const loggerMid = (req, res, next) => {
   console.log(
@@ -34,15 +37,7 @@ const initServer = database => {
   app.use('/v1/', router);
   app.use(catchErrors);
 
-
-
   require('./routes')(router, database);
-
-  router.stack.forEach(function(r){
-    if (r.route && r.route.path){
-      console.log(r.route.path)
-    }
-  })
 
   // const cors = require('cors');
   // app.use(cors);

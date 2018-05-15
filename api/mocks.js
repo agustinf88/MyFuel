@@ -1,10 +1,11 @@
 require('./logging');
 const { dbInit } = require('./repository');
-const { initServer } = require('./server');
+const { runMock } = require('./repository/mock');
 
 dbInit()
   .then(database => {
     console.log('Database connected');
-    initServer(database);
+    // eslint-disable-next-line
+    runMock(database).then(() => process.exit(0));
   })
   .catch(err => console.log('Error while connecting', err));

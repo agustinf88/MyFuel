@@ -13,8 +13,9 @@ let loads = [
 ];
 
 const runMock = database => {
+  console.log('Running Mocks');
   database.collection('loads').drop();
-  database.collection('loads').insertMany(loads);
+  return database.collection('loads').insertMany(loads);
 };
 
 module.exports = {

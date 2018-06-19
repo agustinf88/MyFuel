@@ -1,7 +1,7 @@
 const MongoClient = require('mongodb').MongoClient;
 
 const DB_NAME = 'myfuel';
-const HOST_NAME = 'mongodb://localhost';
+const HOST_NAME = 'mongodb://192.168.99.100';
 const PORT = 32768;
 
 // const CONNECTION_STRING = `${HOST_NAME}:${PORT}/${DB_NAME}`;

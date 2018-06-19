@@ -8,5 +8,3 @@ dbInit()
     initServer(database);
   })
   .catch(err => console.log('Error while connecting', err));
-
-
